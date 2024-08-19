@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Savings Tracker & To-Do List</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Savings Tracker</h1>
+    </header>
+    <div class="container">
+        <div class="homepage">
+            <button id="savingsTrackerBtn">Savings Tracker</button>
+            <button id="toDoListBtn">To-Do List</button>
+        </div>
+        
+        <div id="savingsTracker" class="content">
+            <h2>Savings Tracker</h2>
+            <div class="table-container">
+                <h3>Alex</h3>
+                <table id="alexTable">
+                    <thead>
+                        <tr>
+                            <th>Week</th>
+                            <th>Amount</th>
+                            <th>Date of Payment</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Week 1</td>
+                            <td contenteditable="true"></td>
+                            <td contenteditable="true"></td>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <button onclick="addRow('alexTable')">Add Week</button>
+                <h4>Running Total: <span id="alexTotal">0</span></h4>
+            </div>
+
+            <div class="table-container">
+                <h3>Ash</h3>
+                <table id="ashTable">
+                    <thead>
+                        <tr>
+                            <th>Week</th>
+                            <th>Amount</th>
+                            <th>Date of Payment</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Week 1</td>
+                            <td contenteditable="true"></td>
+                            <td contenteditable="true"></td>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <button onclick="addRow('ashTable')">Add Week</button>
+                <h4>Running Total: <span id="ashTotal">0</span></h4>
+            </div>
+        </div>
+
+        <div id="toDoList" class="content">
+            <h2>To-Do List</h2>
+            <ul id="tasks">
+                <li contenteditable="true"><input type="checkbox" onchange="updateTasks()"> Sample Task</li>
+            </ul>
+            <button onclick="addTask()">Add Task</button>
+            <h4>Tasks Completed: <span id="completedCount">0</span>/<span id="totalTasks">1</span></h4>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
